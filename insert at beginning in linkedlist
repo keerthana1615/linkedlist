@@ -1,0 +1,36 @@
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+         this.data=data;
+        this.next=null;
+    }
+}
+    public class Main {
+       static Node head=null;
+      static void InsertAtBeginning(int data)
+        {
+            Node newNode=new Node(data);
+            newNode.next=head;
+            head=newNode;
+        }
+         static void display()
+            {
+           Node temp=head;
+           while(temp!=null){
+               System.out.print(temp.data+" ");
+               temp=temp.next;
+           }
+       }
+       public static void main(String[] args) {
+        Main list = new Main();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            list.InsertAtBeginning(sc.nextInt());
+        }
+        System.out.print("Linked List: ");
+        list.display();
+    }
+}
